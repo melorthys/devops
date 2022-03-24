@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  grafana:
+    image: louislam/uptime-kuma:1 
+    container_name: uptime-kuma
+    restart: unless-stopped 
+    volumes:
+      - uptime-kuma:/app/data
+    networks:
+      - uptime-kuma
+    ports:
+      - 3001:3001
+
+volumes:
+  uptime-kuma: 
+
+networks:
+  uptime-kuma:
